@@ -1,0 +1,134 @@
+.container {
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  background-color: rgb(146, 144, 164, 0.5);
+  border: 1px solid rgba(53, 53, 54, 0.5);
+  border-radius: 4px;
+  width: 20em;
+  height: 32em;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.search,
+.box {
+  background-color: rgb(146, 144, 164, 0.5);
+  border: 1px solid rgba(53, 53, 54, 0.5);
+  border-radius: 4px;
+  width: 280px;
+  padding: 10px;
+  color: #fff;
+  position: relative;
+  margin: 10px 10px 0px 10px;
+}
+
+.search {
+  font-size: large;
+}
+
+::placeholder {
+  color: #fff;
+}
+
+button {
+  background-color: rgb(146, 144, 164, 0.5);
+  border: 1px solid rgba(53, 53, 54, 0.5);
+  border-radius: 4px;
+  width: 153px;
+  padding: 10px;
+  color: #fff;
+  position: relative;
+  margin: 10px 10px 0px 10px;
+  font-size: small;
+  box-shadow: 2px 2px 6px 1px rgba(53, 53, 54, 0.33);
+}
+button:hover {
+  background-color: rgba(53, 53, 54, 0.5);
+}
+
+.box {
+  display: inline-block;
+  margin: 10px 10px 0px 10px;
+}
+
+.date {
+  font-size: small;
+}
+
+.current-img {
+  width: 144%;
+}
+
+.city {
+  text-align: right;
+}
+.current {
+  padding: 14px;
+  font-size: 26px;
+}
+
+.temp {
+  font-size: 12px;
+}
+
+.day {
+  border: 1px solid rgba(53, 53, 54, 0.5);
+  border-radius: 4px;
+}
+
+.rain {
+  width: 50%;
+}
+
+.sun {
+  width: 50%;
+}
+
+.week {
+  padding: 10px;
+  padding-bottom: 15px;
+}
+
+.day1 {
+  position: relative;
+  right: -20px;
+}
+
+.day2 {
+  position: relative;
+  right: -10px;
+}
+
+.day4,
+.day5 {
+  position: relative;
+  right: -10px;
+  top: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  color: rgba(53, 53, 54, 0.5);
+}
