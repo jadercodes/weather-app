@@ -105,7 +105,7 @@ function displayCurrentLocationF(event) {
   navigator.geolocation.getCurrentPosition(retrievePositionF);
 }
 
-let currentLocButton = document.querySelector("button");
+let currentLocButton = document.querySelector("#current-loc");
 currentLocButton.addEventListener("click", displayCurrentLocation);
 
 let celsiusTemp = 0;
