@@ -7,7 +7,7 @@
   border: 2px solid rgba(53, 53, 54, 0.5);
   border-radius: 4px;
   width: 20em;
-  height: 35em;
+  height: 34em;
   text-align: center;
   margin: 0 auto;
   position: relative;
@@ -81,8 +81,13 @@ button:hover {
   text-align: right;
 }
 .current {
-  padding: 14px;
-  font-size: 26px;
+  padding: 0 14px;
+  font-size: 22px;
+  line-height: 25px;
+}
+
+#description {
+  font-size: small;
 }
 
 .temp {
