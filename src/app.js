@@ -43,6 +43,10 @@ function displayWeather(response) {
   document.querySelector(
     "#description"
   ).innerHTML = `${response.data.weather[0].description}`;
+  document.querySelector(
+    "#wind-speed"
+  ).innerHTML = `Wind: ${response.data.wind.speed}km/h`;
+  console.log(response);
   celsiusTemp = response.data.main.temp;
 }
 

@@ -86,8 +86,10 @@ button:hover {
   line-height: 25px;
 }
 
-#description {
+#description,
+#wind-speed {
   font-size: small;
+  line-height: 15px;
 }
 
 #description:first-letter {
