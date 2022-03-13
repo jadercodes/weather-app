@@ -88,6 +88,9 @@ button:hover {
 
 #description {
   font-size: small;
+}
+
+#description:first-letter {
   text-transform: capitalize;
 }
 
@@ -130,6 +133,16 @@ button:hover {
   top: 5px;
 }
 
+.active {
+  color: #fff;
+  cursor: default;
+}
+
+.active:hover {
+  color: #fff !important;
+  cursor: text;
+}
+
 #f-temp,
 #c-temp,
 #contact {
@@ -141,6 +154,7 @@ button:hover {
 #c-temp:hover {
   color: rgba(53, 53, 54, 0.5);
 }
+
 .contact-box {
   background-color: rgba(53, 53, 54, 0.5);
   width: 153px;

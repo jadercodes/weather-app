@@ -70,6 +70,8 @@ function fahrenheit(event) {
   event.preventDefault();
   let temp = document.querySelector("#temp");
   temp.innerHTML = Math.round((celsiusTemp * 9) / 5 + 32);
+  cTemp.classList.remove("active");
+  fTemp.classList.add("active");
 }
 
 let fTemp = document.querySelector("#f-temp");
@@ -79,6 +81,8 @@ function celsius(event) {
   event.preventDefault();
   let temp = document.querySelector("#temp");
   temp.innerHTML = Math.round(celsiusTemp);
+  cTemp.classList.add("active");
+  fTemp.classList.remove("active");
 }
 
 let cTemp = document.querySelector("#c-temp");
@@ -94,6 +98,8 @@ function retrievePosition(position) {
   let lon = position.coords.longitude;
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(url).then(displayWeather);
+  cTemp.classList.add("active");
+  fTemp.classList.remove("active");
 }
 
 function retrievePositionF(position) {

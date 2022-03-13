@@ -34,6 +34,8 @@
               placeholder="Search city"
               class="search"
               id="search-input"
+              autocomplete="off"
+              autofocus="on"
             />
           </form>
           <button id="current-loc">Current Location</button>
@@ -50,8 +52,9 @@
               </div>
 
               <div class="col-9 current">
-                <span id="temp"></span><a href="#" id="c-temp"> °C</a>
-                <span> | </span><a href="#" id="f-temp"> °F</a>
+                <span id="temp"></span
+                ><a href="#" id="c-temp" class="active"> °C</a> <span> | </span
+                ><a href="#" id="f-temp"> °F</a>
                 <div id="description">Cloudy</div>
                 <span id="current-city"></span>
               </div>
