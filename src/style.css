@@ -7,11 +7,12 @@
   border: 2px solid rgba(53, 53, 54, 0.5);
   border-radius: 4px;
   width: 20em;
-  height: 34em;
+  height: 33em;
   text-align: center;
   margin: 0 auto;
   position: relative;
   font-family: "Poppins", sans-serif;
+  background: rgba(53, 53, 54, 0.6);
 }
 
 .center {
@@ -100,11 +101,6 @@ button:hover {
   font-size: 12px;
 }
 
-.day {
-  border: 1px solid rgba(53, 53, 54, 0.5);
-  border-radius: 4px;
-}
-
 .rain {
   width: 50%;
 }
@@ -116,23 +112,7 @@ button:hover {
 .week {
   padding: 10px;
   padding-bottom: 15px;
-}
-
-.day1 {
-  position: relative;
-  right: -20px;
-}
-
-.day2 {
-  position: relative;
-  right: -10px;
-}
-
-.day4,
-.day5 {
-  position: relative;
-  right: -10px;
-  top: 5px;
+  font-size: 13px;
 }
 
 .active {

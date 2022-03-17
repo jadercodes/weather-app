@@ -65,6 +65,29 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
+function showForecast() {
+  let weekForecast = document.querySelector("#week-forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-4 day">
+ <div>${day}</div>
+ <div>29°C</div>
+ <img
+ class="rain"
+ src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/026/246/original/rain_light.png?1643806074"
+ />
+ </div>
+ `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  weekForecast.innerHTML = forecastHTML;
+}
+
 // END GET WEATHER AND CITY
 
 // CONVERT UNITS
@@ -131,3 +154,5 @@ let celsiusTemp = 0;
 getCity("Bangkok");
 
 // END CURRENT LOCATION BUTTON
+
+showForecast();
