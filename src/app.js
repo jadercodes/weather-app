@@ -47,6 +47,13 @@ function displayWeather(response) {
     "#wind-speed"
   ).innerHTML = `Wind: ${response.data.wind.speed}km/h`;
   celsiusTemp = response.data.main.temp;
+  getForecast(response.data.coord);
+}
+
+function getForecast(coordinates) {
+  let apiKey = "f33d05dcaa068a4dd766639aa37be9b8";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
 }
 
 function getCity(city) {
@@ -65,27 +72,37 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-function showForecast() {
+function showForecast(response) {
   let weekForecast = document.querySelector("#week-forecast");
 
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  let forecast = response.data.daily;
+
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+
+  forecast.slice(1, 7).forEach((forecastDay) => {
     forecastHTML =
       forecastHTML +
       `
   <div class="col-4 day">
- <div>${day}</div>
- <div>29°C</div>
+ <div>${formatDay(forecastDay.dt)}</div>
+ <div>${Math.round(forecastDay.temp.day)} °C</div>
  <img
- class="rain"
- src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/026/246/original/rain_light.png?1643806074"
+ class="forecast-img"
+ src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
  />
  </div>
  `;
   });
   forecastHTML = forecastHTML + `</div>`;
   weekForecast.innerHTML = forecastHTML;
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
 }
 
 // END GET WEATHER AND CITY
@@ -154,5 +171,3 @@ let celsiusTemp = 0;
 getCity("Bangkok");
 
 // END CURRENT LOCATION BUTTON
-
-showForecast();

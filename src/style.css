@@ -101,11 +101,7 @@ button:hover {
   font-size: 12px;
 }
 
-.rain {
-  width: 50%;
-}
-
-.sun {
+.forecast-img {
   width: 50%;
 }
 
