@@ -43,9 +43,9 @@ function displayWeather(response) {
   document.querySelector(
     "#description"
   ).innerHTML = `${response.data.weather[0].description}`;
-  document.querySelector(
-    "#wind-speed"
-  ).innerHTML = `Wind: ${response.data.wind.speed}km/h`;
+  document.querySelector("#wind-speed").innerHTML = `Wind: ${Math.round(
+    response.data.wind.speed
+  )} mph`;
   celsiusTemp = response.data.main.temp;
   getForecast(response.data.coord);
 }
@@ -57,9 +57,8 @@ function getForecast(coordinates) {
 }
 
 function getCity(city) {
-  let unitsMetric = "metric";
   let apiKey = "f33d05dcaa068a4dd766639aa37be9b8";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unitsMetric}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 }
 
@@ -67,6 +66,8 @@ function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#search-input").value;
   getCity(city);
+  cTemp.classList.add("active");
+  fTemp.classList.remove("active");
 }
 
 let searchForm = document.querySelector("#search-form");
